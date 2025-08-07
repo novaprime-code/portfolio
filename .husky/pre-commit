@@ -1,0 +1,13 @@
+# Run lint-staged to format and lint files
+npx lint-staged
+
+# Check if build succeeds
+echo "🔍 Checking if build succeeds..."
+npm run build
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed! Please fix the errors before committing."
+  exit 1
+fi
+
+echo "✅ Build successful! Proceeding with commit."

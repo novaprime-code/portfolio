@@ -1,0 +1,22 @@
+# Check if COMMIT_FROM_CZ environment variable is set
+if [ "$COMMIT_FROM_CZ" = "true" ]; then
+  exit 0
+fi
+
+# Check if commit is initial commit (contains only one line starting with "Initial commit")
+commit_msg_file="$1"
+commit_msg_lines=$(wc -l < "$commit_msg_file")
+if [ "$commit_msg_lines" -eq 1 ] && grep -q "^Initial commit" "$commit_msg_file"; then
+  exit 0
+fi
+
+# Check if the command is being run interactively, and if so, run git-cz
+# Use --hook to allow git-cz to edit the commit message file directly
+# Allow skipping with Ctrl+C by checking the exit code
+if [ -t 1 ]; then
+  exec < /dev/tty
+  git cz --hook "$commit_msg_file" || exit 0 # Exit successfully if user aborts cz
+else
+  echo "Not running in an interactive terminal, skipping git-cz."
+  exit 0
+fi 
