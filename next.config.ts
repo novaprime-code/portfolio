@@ -2,9 +2,14 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: '',
-  assetPrefix: '',
+  // basePath: '',
+  // assetPrefix: '',
+  output: 'export',
+  trailingSlash: true,
+  basePath: '/novaprime-code',
+  assetPrefix: '/novaprime-code/',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

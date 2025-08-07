@@ -228,6 +228,7 @@ const Skills: React.FC = () => {
                         height={16}
                         className="w-4 h-4"
                         style={{ filter: 'brightness(1.2)' }}
+                        unoptimized
                       />
                       <span className="text-sm text-gray-300">{tech.name}</span>
                     </div>

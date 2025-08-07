@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "export": "next build",
+    "deploy": "npm run export && touch out/.nojekyll && gh-pages -d out",
     "prepare": "husky",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
@@ -47,6 +49,7 @@
     "cz-customizable": "^7.4.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
+    "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "postcss": "^8",

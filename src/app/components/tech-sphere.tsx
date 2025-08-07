@@ -186,7 +186,7 @@ const TechSphereComponent = () => {
             {customImages.length > 0 &&
               customImages.map((image, index) => (
                 <a key={index} href="#" onClick={e => e.preventDefault()}>
-                  <Image src={image} alt="Custom icon" width={36} height={36} />
+                  <Image src={image} alt="Custom icon" width={36} height={36} unoptimized />
                 </a>
               ))}
           </>
