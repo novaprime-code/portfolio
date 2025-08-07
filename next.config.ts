@@ -6,8 +6,9 @@ const nextConfig: NextConfig = {
   // assetPrefix: '',
   output: 'export',
   trailingSlash: true,
-  // basePath: '/novaprime-code',
-  // assetPrefix: '/novaprime-code/',
+  //base path only if not local development
+  basePath: process.env.NODE_ENV !== 'development' ? '/portfolio' : '',
+  assetPrefix: process.env.NODE_ENV !== 'development' ? '/portfolio/' : '',
   images: {
     unoptimized: true,
     remotePatterns: [
