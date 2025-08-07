@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   // assetPrefix: '',
   output: 'export',
   trailingSlash: true,
-  basePath: '/novaprime-code',
-  assetPrefix: '/novaprime-code/',
+  // basePath: '/novaprime-code',
+  // assetPrefix: '/novaprime-code/',
   images: {
     unoptimized: true,
     remotePatterns: [
